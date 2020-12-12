@@ -1,4 +1,7 @@
 # stack-templates
+
+![](gang.jpg)
+
 a haskell project skeleton
 
 the main things that make this unique:
