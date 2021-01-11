@@ -8,6 +8,7 @@ the main things that make this unique:
 - defaulting to AGPL 3+, instead of MIT
 - adding a massive amount of extensions to the `default-extensions` field
 - adding an `hie.yaml` file
+- using base-prelude as default
 
 to use this, add this line to stack's config.yaml:
 ```

@@ -17,7 +17,7 @@ extra-source-files:
 - stack.yaml
 
 dependencies:
-  [ base, protolude ]
+  [ base, base-prelude ]
 
 default-extensions:
   [ NoImplicitPrelude
@@ -108,7 +108,7 @@ main = Distribution.Simple.defaultMain
 
 {-# START_FILE bench/Main.hs #-}
 import Criterion.Main
-import Protolude
+import BasePrelude
 
 main :: IO ()
 main = defaultMain [bench "const" (whnf const ())]
@@ -121,13 +121,13 @@ main = main_
 {-# START_FILE src/Main_.hs #-}
 module Main_ where
 
-import Protolude
+import BasePrelude
 
 main_ :: IO ()
 main_ = return ()
 
 {-# START_FILE test/Main.hs #-}
-import Protolude
+import BasePrelude
 import qualified Test.Tasty
 import Test.Tasty.Hspec
 
