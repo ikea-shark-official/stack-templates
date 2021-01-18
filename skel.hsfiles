@@ -29,8 +29,13 @@ default-extensions:
   , MultiParamTypeClasses, MultiWayIf, NamedFieldPuns, OverloadedStrings
   , PartialTypeSignatures, PatternGuards, PolyKinds, RankNTypes
   , RecordWildCards, ScopedTypeVariables, StandaloneDeriving, TupleSections
-  , TypeFamilies, TypeSynonymInstances, ViewPatterns
+  , TypeFamilies, TypeSynonymInstances, ViewPatterns, BlockArguments
   ]
+
+# this is setup so that, i.e, getDataFile "dummy.txt"
+# returns the path for "data/dummy.txt"
+data-dir: data
+data-files: ./*
 
 library:
   source-dirs: src
@@ -70,6 +75,9 @@ tests:
     - -rtsopts
     - -threaded
     - -with-rtsopts=-N
+
+{-# START_FILE data/dummy.txt #-}
+this file is here to ensure that data gets created
 
 {-# START_FILE hie.yaml #-}
 cradle:
